@@ -32,38 +32,35 @@ function randomBackground() {
     var x = Math.floor(Math.random() * 256);
     var y = Math.floor(Math.random() * 256);
     var z = Math.floor(Math.random() * 256);
-    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
-    console.log(bgColor);
+    var colour = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(colour);
   
-    document.body.style.background = bgColor;
+    document.body.style.background = colour;
     }
 
 
 function renderCard(note) {
-    const div = document.createElement('div');
-    div.classList.add('column', 'is-one-quarter');
+    // const div = document.createElement('div');
+    // div.classList.add('column', 'is-one-quarter');
 
-    const card = document.createElement('div');
-    card.classList.add('card');
-    randomBackground();
-
-    div.appendChild(card);
-    
+    // const card = document.createElement('div');
+    // card.classList.add('card');
+    // div.appendChild(card);
 
     //convert note to html
     // console.log(note);
-    
-    // return `
-    // <div class = "column is one quarter">
-    //     <div class="card">
-    //         <header class="card header">
-    //             <span class="card header title">${note.title }</span>
-    //         </header>
-    //     </div>
-    //     <div class="card content">
-    //         <div class="content">${ note.title }</div>
-    //     </div>
-    // </div>
-    // `;
+    randomBackground();
+    return `
+    <div class = "column is one quarter">
+        <div class="card">
+            <header class="card header">
+                <span class="card header title">${note.title }</span>
+            </header>
+        </div>
+        <div class="card content">
+            <div class="content">${ note.title }</div>
+        </div>
+    </div>
+    `;
 }
 
