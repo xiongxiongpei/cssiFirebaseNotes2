@@ -27,26 +27,43 @@ function renderData(data) {
     }
     document.querySelector('#app').innerHTML = html;
 }
+
+function randomBackground() {
+    var x = Math.floor(Math.random() * 256);
+    var y = Math.floor(Math.random() * 256);
+    var z = Math.floor(Math.random() * 256);
+    var bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor);
+  
+    document.body.style.background = bgColor;
+    }
+
+
 function renderCard(note) {
     const div = document.createElement('div');
     div.classList.add('column', 'is-one-quarter');
 
     const card = document.createElement('div');
     card.classList.add('card');
+    randomBackground();
 
     div.appendChild(card);
+    
+
     //convert note to html
     // console.log(note);
-    return `
-    <div class = "column is one quarter">
-        <div class="card">
-            <header class="card header">
-                <span class="card header title">${note.title }</span>
-            </header>
-        </div>
-        <div class="card content">
-            <div class="content">${ note.title }</div>
-        </div>
-    </div>
-    `;
+    
+    // return `
+    // <div class = "column is one quarter">
+    //     <div class="card">
+    //         <header class="card header">
+    //             <span class="card header title">${note.title }</span>
+    //         </header>
+    //     </div>
+    //     <div class="card content">
+    //         <div class="content">${ note.title }</div>
+    //     </div>
+    // </div>
+    // `;
 }
+
